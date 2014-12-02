@@ -1,0 +1,75 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Styles for the calendar content */
+.cal-container {
+  display: flex;
+}
+
+.cal-times {
+  text-align: right;
+  margin-right: 10px;
+}
+.cal-time {
+  height: 19px;
+  font-size: 12px;
+  color: #737373;
+}
+
+/*top of the hour is styled differently */
+.cal-hour-top {
+  font-size: 16px;
+  color: #737373;
+}
+
+
+.cal-content {
+  background-color: #ECECEC;
+  height: 720px;
+  
+  /* .cal-event-containers are absolutely positioned inside
+    so this is given the full width and left for events is
+    calculated to take into account left-right padding */
+  width: 620px;
+  position: relative;
+}
+
+.cal-event-container {
+  border-left: 3px solid #4D6FA7;
+  background-color: #fff;
+  position: absolute;
+  /*to prevent eventName from overflowing really short events*/
+  overflow: hidden;
+  width: 100%;
+}
+
+.cal-event-title {
+  color: #4D6FA7;
+  margin-bottom: 5px;
+}
+
+.cal-event-location {
+  color: #797979;
+  margin-top: 5px;
+}
+
+.cal-event-title, .cal-event-location {
+  margin-left: 5px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
