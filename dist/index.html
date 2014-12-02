@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Calendar</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="styles/vendor.css">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+    <div class="container">
+      <div class="row cal-container">
+        <div class="cal cal-times">
+          <!-- times don't change, so static -->
+          <p class='cal-time cal-hour-top'>9 AM</p>
+          <p class='cal-time'>9:30</p>
+          <p class='cal-time cal-hour-top'>10:00 AM</p>
+          <p class='cal-time'>10:30</p>
+          <p class='cal-time cal-hour-top'>11:00 AM</p>
+          <p class='cal-time'>11:30</p>
+          <p class='cal-time cal-hour-top'>12:00 PM</p>
+          <p class='cal-time'>12:30</p>
+          <p class='cal-time cal-hour-top'>1:00 PM</p>
+          <p class='cal-time'>1:30</p>
+          <p class='cal-time cal-hour-top'>2:00 PM</p>
+          <p class='cal-time'>2:30</p>
+          <p class='cal-time cal-hour-top'>3:00 PM</p>
+          <p class='cal-time'>3:30</p>
+          <p class='cal-time cal-hour-top'>4:00 PM</p>
+          <p class='cal-time'>4:30</p>
+          <p class='cal-time cal-hour-top'>5:00 PM</p>
+          <p class='cal-time'>5:30</p>
+          <p class='cal-time cal-hour-top'>6:00 PM</p>
+          <p class='cal-time'>6:30</p>
+          <p class='cal-time cal-hour-top'>7:00 PM</p>
+          <p class='cal-time'>7:30</p>
+          <p class='cal-time cal-hour-top'>8:00 PM</p>
+          <p class='cal-time'>8:30</p>
+          <p class='cal-time cal-hour-top'>9:00 PM</p>
+
+        </div>
+        <div class="cal-content" id='calendar-container'>
+            
+        </div>
+      </div>
+
+    </div>
+
+
+    <script src="scripts/vendor.js"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-49465041-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <script src="scripts/main.js"></script>
+
+    <!-- lodash template for calendar events -->
+    <!-- event's top is always start in px because the calendar is 720px tall. 1px <=> 1 minute -->
+    <script type='text/template' id='eventTpl'>
+
+      <div class="cal-event-container" style='height:<%= eventHeight + "px" %> ; top: <%= start + "px" %>; left: <%= left + "px" %>; width: <%= eventWidth + "px" %>'>
+        <h4 class="cal-event-title"><%= eventTitle %></h2>
+        <h5 class="cal-event-location"><%= eventLocation %></h4>
+      </div>
+    </script>
+
+    <script>
+      jQuery(document).ready(function($) {
+        layOutDay([ {start: 30, end: 150}, {start: 540, end: 600}, {start: 560, end: 620}, {start: 610, end: 670} ]);  
+        });
+    </script>
+</body>
+</html>
